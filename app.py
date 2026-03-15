@@ -110,7 +110,7 @@ I could ever ask for 💛"""
 
     st.subheader("⏳ Time With You")
 
-    start = datetime(2021,4,30)
+    start = datetime(2021,4,10)
     today = datetime.now()
 
     days = (today-start).days
