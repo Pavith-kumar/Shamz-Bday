@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#FFD43B;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+overflow-x:hidden;
+color:white;
+}
+
+/* app container */
+
+.app{
+width:90%;
+max-width:500px;
+background:#FFC107;
+border-radius:25px;
+padding:30px;
+box-shadow:0 15px 40px rgba(0,0,0,0.25);
+text-align:center;
+}
+
+/* title */
+
+h1{
+font-size:32px;
+margin-bottom:10px;
+}
+
+/* buttons */
+
+button{
+width:100%;
+padding:14px;
+margin-top:12px;
+border:none;
+border-radius:20px;
+font-size:18px;
+background:#FFB300;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#FFA000;
+}
+
+/* sections */
+
+.section{
+display:none;
+margin-top:20px;
+}
+
+/* images */
+
+img{
+width:100%;
+border-radius:15px;
+margin-top:10px;
+}
+
+/* floating hearts */
+
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:25px;
+color:white;
+animation:floatUp 6s linear infinite;
+}
+
+@keyframes floatUp{
+0%{transform:translateY(0);opacity:1;}
+100%{transform:translateY(-100vh);opacity:0;}
+}
+
+/* desktop improvements */
+
+@media(min-width:800px){
+
+.app{
+max-width:600px;
+padding:40px;
+}
+
+h1{
+font-size:40px;
+}
+
+button{
+width:60%;
+margin-left:auto;
+margin-right:auto;
+display:block;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="app">
+
+<h1>🤍 Happy Birthday My Love 🤍</h1>
+
+<p>You make my world brighter every day ☀️</p>
+
+<button onclick="showSurprise()">Tap to open your surprise 🎁</button>
+
+<div id="surprise" class="section">
+
+<h3>💌 A Message For You</h3>
+
+<p>
+
+From the day you came into my life,<br>
+everything became brighter.<br><br>
+
+Your smile lights up my world.<br>
+Your love makes my life beautiful.<br><br>
+
+Happy Birthday to the most amazing girl 🤍
+
+</p>
+
+<h3>📸 Our Memories</h3>
+
+<img src="photo 1.jpg">
+<img src="photo 2.jpg">
+<img src="photo 3.jpg">
+<img src="photo 4.jpg">
+<img src="photo 5.jpg">
+<img src="photo 6.jpg">
+<img src="photo 7.jpg">
+<img src="photo 8.jpg">
+
+<h3>🎁 Your Birthday Gift</h3>
+
+<button onclick="openGift()">Open Gift 🎀</button>
+
+<div id="gift" class="section">
+
+<h1>🎂</h1>
+
+<img src="gift.jpg">
+
+<p>Happy Birthday My Love 🤍</p>
+
+</div>
+
+<h3>💍 One More Question</h3>
+
+<p>Will you stay with me forever? 🤍</p>
+
+<button onclick="yes()">YES 🤍</button>
+
+<button onclick="maybe()">Maybe 🤭</button>
+
+<p id="answer"></p>
+
+</div>
+
+</div>
+
+<script>
+
+/* show surprise */
+
+function showSurprise(){
+document.getElementById("surprise").style.display="block";
+}
+
+/* gift */
+
+function openGift(){
+document.getElementById("gift").style.display="block";
+}
+
+/* proposal */
+
+function yes(){
+document.getElementById("answer").innerHTML="You made me the happiest person alive 🤍";
+}
+
+function maybe(){
+document.getElementById("answer").innerHTML="Take your time… my answer will always be YES 🤍";
+}
+
+/* floating hearts */
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="🤍";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(20+Math.random()*30)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+}
+
+setInterval(createHeart,500);
+
+</script>
+
+</body>
+</html>
